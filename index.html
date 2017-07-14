@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Launastudull</title>
+    <title>Launastuðull</title>
     <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/vue2-filters/0.1.9/vue2-filters.min.js"></script>
 
@@ -18,37 +18,24 @@
         <div class="col">
           <h2 class="text-center my-2">Launastuðull</h2>
           <p>Lágmarkslaun á Íslandi eru um <b>257.000 ISK</b> á mánuði.</p>
-          <p>Hvað ef laun allra opinberra starfsmanna væru tengd, þannig að ekki væri hægt að hækka launs ákveðns hóps, nema hækka laun allra?
+          <p>Hvað ef laun allra opinberra starfsmanna væru tengd, þannig að ekki væri hægt að hækka launs ákveðins hóps, nema hækka laun allra?
           Fyrst þyrfti að ákveða "stuðul", sem lýsir hversu mikill munur er innbyrðis á milli stétta.</p>
           <p>Hér fyrir neðan eru einföld <b>DÆMI</b>.</p>
         </div>
-      </div> <!-- end row -->
+      </div>
 
       <div class="row">
-        <div class="col-6">
-          <div class="row">
-            <div class="col-12 my-2">
-              <label for="original_amount">Hér geturu breytt lágmarkslaunum</label>
-            </div>
-            <div class="col-12 my-2">
-              <button v-for="item in examples" class="btn btn-sm btn-secondary" v-on:click="updateTotalSal(item.price)">{{ item.price }}</button>
-              <input class="form-control" type="range" min="257000" max="2000000" v-model="totalSalary" />
-              <div class="input-group input-group">
-                <span class="input-group-addon">Kr</span>
-                <input type="number" class="form-control" v-model="totalSalary" placeholder="Original Amount" id="original_amount" />
-              </div>
-            </div>
+        <div class="col-12 col-lg-6 my-2">
+          <label for="original_amount">Hér geturu breytt lágmarkslaunum</label>
+        </div>
+        <div class="col-12 col-lg-6 my-2">
+          <button v-for="item in examples" class="btn btn-sm btn-secondary" v-on:click="updateTotalSal(item.price)">{{ item.price }}</button>
+          <input class="form-control" type="range" min="257000" max="2000000" v-model="totalSalary" />
+          <div class="input-group input-group">
+            <span class="input-group-addon">Kr</span>
+            <input type="number" class="form-control" v-model="totalSalary" placeholder="Original Amount" id="original_amount" />
           </div>
         </div>
-        <div class="col-6 mt-2 outline">
-          <p>Útreikningar lágmarkslauna:</p>
-          <table class="table table-sm table-bordered table-hover">
-            <tr><td>Mánaðarlaun:  </td><td>{{ totalSalary | currency('', 0)}}</td></tr>
-            <tr class="text-success"><td>Persónuafsláttur:</td><td>?</td></tr>
-            <tr class="text-danger"><td>Samtals skattur: </td><td>?</td></tr>
-          </table>
-        </div>
-
       </div> <!-- end row -->
 
       <div class="row my-2">
@@ -58,11 +45,17 @@
         <div class="col-12">
           <div class="card-deck">
 
-            <div v-for="item in flokkur" class="card w-25">
+            <div v-for="(item, index) in category" :key="index" class="card">
+              <div class="card-header">
+                <div class="input-group input-group-lg">
+                  <input v-model="item.ratio" class="form-control"/>
+                </div>
+              </div>
               <div class="card-block">
-                <h3>{{item.ratio}} x</h3>
+                <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-sm btn-success" aria-label="Left Align">+</button>
+                <button type="button" v-if="index != 0" v-on:click="decrement(index)" class="btn btn-sm btn-danger" aria-label="Left Align">-</button>
                 <hr />
-                <h5>{{totalSalary * item.ratio| currency('', 0)}}</h5>
+                <h5 class="text-muted">{{totalSalary * item.ratio| currency('', 0)}}</h5>
                 <hr />
                 <p class="card-text">{{item.jobs}}</p>
               </div>
