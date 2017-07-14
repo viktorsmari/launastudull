@@ -20,15 +20,13 @@
           <p>Lágmarkslaun á Íslandi eru um <b>257.000 ISK</b> á mánuði.</p>
           <p>Hvað ef laun allra opinberra starfsmanna væru tengd, þannig að ekki væri hægt að hækka launs ákveðins hóps, nema hækka laun allra?
           Fyrst þyrfti að ákveða "stuðul", sem lýsir hversu mikill munur er innbyrðis á milli stétta.</p>
-          <p>Hér fyrir neðan eru einföld <b>DÆMI</b>.</p>
+          <p>Fyrir neðan eru einföld <b>dæmi</b>.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-12 col-lg-6 my-2">
-          <label for="original_amount">Hér geturu breytt lágmarkslaunum</label>
-        </div>
-        <div class="col-12 col-lg-6 my-2">
+          <label for="original_amount">Hér geturu breytt lágmarkslaunum.</label><br />
           <button v-for="item in examples" class="btn btn-sm btn-secondary" v-on:click="updateTotalSal(item.price)">{{ item.price }}</button>
           <input class="form-control" type="range" min="257000" max="2000000" v-model="totalSalary" />
           <div class="input-group input-group">
@@ -59,10 +57,18 @@
               </div>
             </div>
 
-          </div>
+          </div><!-- col-12 -->
         </div><!-- col-12 -->
       </div> <!-- row -->
 
+      <div class="text-center my-2">
+        <h5>Heimildir</h5>
+        <a href="https://www.althingi.is/thingmenn/starfskjor-althingismanna/thingfararkaup-laun-thingmanna/">https://www.althingi.is/thingmenn/starfskjor-althingismanna/thingfararkaup-laun-thingmanna/</a><br />
+        <a href="http://www.kjararad.is/frettir/nr/111">http://www.kjararad.is/frettir/nr/111</a><br />
+        <hr />
+        <i><p>Þetta er frjáls og opinn kóði. Fyrir leiðréttingar og ábendingar er hægt að nota Github:</p></i>
+        <a href="https://github.com/viktorsmari/launastudull">https://github.com/viktorsmari/launastudull</a>
+      </div>
     </div> <!-- cont -->
   </body>
   <script type="text/javascript" charset="utf-8" src="index.js"></script>
