@@ -45,11 +45,9 @@
         <div class="col-12">
           <div class="card-deck">
 
-            <div v-for="(item, index) in category" :key="index" class="card">
+            <div v-for="(item, index) in category" :key="index" class="card my-2">
               <div class="card-header">
-                <div class="input-group input-group-lg">
-                  <input v-model="item.ratio" class="form-control"/>
-                </div>
+                <input v-model="item.ratio" class="text-center form-control"/>
               </div>
               <div class="card-block">
                 <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-sm btn-success" aria-label="Left Align">+</button>
