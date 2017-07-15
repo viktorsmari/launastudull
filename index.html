@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-12 col-lg-6 my-2">
           <label for="original_amount">Hér geturu breytt lágmarkslaunum.</label><br />
-          <button v-for="item in examples" class="btn btn-sm btn-secondary" v-on:click="updateTotalSal(item.price)">{{ item.price }}</button>
+          <button v-for="item in examples" class="btn btn-sm btn-secondary" v-on:click="updateTotalSal(item.price)" data-toggle="tooltip" data-placement="top" title="Select minimum wage as the base of all others salary">{{ item.price }}</button>
           <input class="form-control" type="range" min="257000" max="2000000" v-model="totalSalary" />
           <div class="input-group input-group">
             <span class="input-group-addon">Kr</span>
@@ -48,8 +48,8 @@
             <input v-model="item.ratio" type="number" class="text-center form-control" style="font-size=20px"/>
           </div>
           <div class="card-block">
-            <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-success" aria-label="Left Align">+</button>
-            <button type="button" v-if="index != 0" v-on:click="decrement(index)" class="btn btn-danger" aria-label="Left Align">-</button>
+            <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-success" aria-label="Left Align" data-toggle="tooltip" data-placement="top" title="Increment by + 0.1">+</button>
+            <button type="button" v-if="index != 0" v-on:click="decrement(index)" class="btn btn-danger"  aria-label="Left Align" data-toggle="tooltip" data-placement="top" title="Decrement by - 0.1">-</button>
             <input class="form-control" type="range" min="0" max="12" v-model="item.ratio" />
             <hr />
             <h5 class="">{{totalSalary * item.ratio| currency('', 0)}}</h5>
