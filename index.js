@@ -14,7 +14,7 @@ var myapp = new Vue({
     category: [
     { ratio:1.0,   jobs: 'Verkamenn'},
     { ratio:1.5,   jobs: 'Lögreglumenn?'},
-    { ratio:1.6,   jobs: 'Kennarar'},
+    { ratio:1.6,   jobs: 'Grunnskólakennarar'},
     { ratio:1.8,   jobs: 'Læknar'},
     { ratio:4.0,   jobs: 'Alþingismenn'},
     { ratio:7.1,   jobs: 'Ráðherra'},

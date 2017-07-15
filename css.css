@@ -1,5 +1,8 @@
 .outline{
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding-top: 10px;
+  padding: 0px;
+}
+.form-control{
+  font-size: 20px;
 }

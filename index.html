@@ -40,31 +40,32 @@
         <div class="col-12 my-2">
           <h3 class="text-center my-2">Stuðull </h3>
         </div>
-        <div class="col-12">
-          <div class="card-deck">
+      </div>
+      <div class="row">
 
-            <div v-for="(item, index) in category" :key="index" class="card my-2">
-              <div class="card-header">
-                <input v-model="item.ratio" class="text-center form-control"/>
-              </div>
-              <div class="card-block">
-                <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-sm btn-success" aria-label="Left Align">+</button>
-                <button type="button" v-if="index != 0" v-on:click="decrement(index)" class="btn btn-sm btn-danger" aria-label="Left Align">-</button>
-                <hr />
-                <h5 class="text-muted">{{totalSalary * item.ratio| currency('', 0)}}</h5>
-                <hr />
-                <p class="card-text">{{item.jobs}}</p>
-              </div>
-            </div>
+        <div v-for="(item, index) in category" :key="index" class="col m-2 outline">
+          <div class="card-header">
+            <input v-model="item.ratio" type="number" class="text-center form-control" style="font-size=20px"/>
+          </div>
+          <div class="card-block">
+            <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-success" aria-label="Left Align">+</button>
+            <button type="button" v-if="index != 0" v-on:click="decrement(index)" class="btn btn-danger" aria-label="Left Align">-</button>
+            <input class="form-control" type="range" min="0" max="12" v-model="item.ratio" />
+            <hr />
+            <h5 class="">{{totalSalary * item.ratio| currency('', 0)}}</h5>
+            <hr />
+            <p class="card-text">{{item.jobs}}</p>
+          </div>
+        </div>
 
-          </div><!-- col-12 -->
-        </div><!-- col-12 -->
       </div> <!-- row -->
 
       <div class="text-center my-2">
         <h5>Heimildir</h5>
         <a href="https://www.althingi.is/thingmenn/starfskjor-althingismanna/thingfararkaup-laun-thingmanna/">https://www.althingi.is/thingmenn/starfskjor-althingismanna/thingfararkaup-laun-thingmanna/</a><br />
         <a href="http://www.kjararad.is/frettir/nr/111">http://www.kjararad.is/frettir/nr/111</a><br />
+        <h5 class="my-2">Meira:</h5>
+        <a href="https://viktorsmari.github.io/tax-calculator/">Skattareiknivél sem reiknar skattþrep (í vinnslu)</a>
         <hr />
         <i><p>Þetta er frjáls og opinn kóði. Fyrir leiðréttingar og ábendingar er hægt að nota Github:</p></i>
         <a href="https://github.com/viktorsmari/launastudull">https://github.com/viktorsmari/launastudull</a>
