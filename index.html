@@ -45,7 +45,8 @@
 
         <div v-for="(item, index) in category" :key="index" class="col m-2 outline">
           <div class="card-header">
-            <input v-model="item.ratio" type="number" class="text-center form-control" style="font-size=20px"/>
+            <input v-if="index == 0" placeholder="1" disabled type="number" class="text-center form-control" style="font-size=20px" />
+            <input v-else v-model="item.ratio" type="number" class="text-center form-control" style="font-size=20px"/>
           </div>
           <div class="card-block">
             <button type="button" v-if="index != 0" v-on:click="increment(index)" class="btn btn-success" aria-label="Left Align" data-toggle="tooltip" data-placement="top" title="Increment by + 0.1">+</button>
