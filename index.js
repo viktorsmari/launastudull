@@ -12,7 +12,7 @@ var myapp = new Vue({
       { price: 1200000},
     ],
     category: [
-    { ratio:1.0,      jobs: 'Verkamenn'},
+    { ratio:1.0,      jobs: 'Verkamenn / lágmarkslaun'},
     { ratio:1.5,      jobs: 'Lögreglumenn?'},
     { ratio:1.6,      jobs: 'Grunnskólakennarar'},
     { ratio:1.712062, jobs: 'Flugvirkjar 2017 (ekki opinbert starf)'},
