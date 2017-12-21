@@ -20,6 +20,7 @@ var myapp = new Vue({
     { ratio:4.0,      jobs: 'Alþingismenn'},
     { ratio:5.0272,    jobs: 'Skálholtsbiskup'},
     { ratio:6.0428,    jobs: 'Biskup Íslands'},
+    { ratio:7.0727,    jobs: 'Forseti Landsréttar'},
     { ratio:7.1,      jobs: 'Ráðherra'},
     { ratio:7.1,      jobs: 'Forseti Alþingis'},
     { ratio:7.9,      jobs: 'Forsætisráðherra'},
